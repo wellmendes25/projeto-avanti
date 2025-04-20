@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 // componentes
 import Header from "./componentes/header/page.jsx";
 import SuperSale from "./componentes/supersale/page.jsx";
-import Lancamentos from "./componentes/lancamentos/page.jsx";
+import Lancamentos from "./componentes/lancamentos/lancamentos.jsx";
 import Section from "./componentes/section/page";
 import Contatos from "./componentes/contatos/page.jsx";
 import Newsletter from "./componentes/newsletter/page";
