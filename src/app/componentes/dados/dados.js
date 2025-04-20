@@ -22,4 +22,5 @@ produtos.forEach(produto => {
     produto.parcelado = calcularParcelado(produto.preco);
 });
 
+
 export default produtos;

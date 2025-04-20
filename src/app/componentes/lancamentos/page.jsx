@@ -10,16 +10,18 @@ import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
-export default function Lancamentos() {
+
+
+export default function Lancamentos({produtos}) {
     return (
         <section>
             <Swiper
                 slidesPerView={4}
                 breakpoints={{
                     0: { slidesPerView: 1 },
-                    650: { slidesPerView: 2 },
-                    900: { slidesPerView: 3 },
-                    1200: { slidesPerView: 4 },
+                    750: { slidesPerView: 2 },
+                    1550: { slidesPerView: 3 },
+                    2000: { slidesPerView: 4 },
                 }}
                 navigation
                 modules={[Navigation]}

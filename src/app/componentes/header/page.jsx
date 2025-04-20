@@ -9,19 +9,19 @@ import { AiOutlineUser } from "react-icons/ai";
 import { IoIosMenu } from "react-icons/io";
 import { BiX } from "react-icons/bi";
 
-export default function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [searchQuery, setSearchQuery] = useState(''); // Estado para armazenar a busca
-    const [searchResult, setSearchResult] = useState(''); // Estado para armazenar o resultado da busca
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+export default function Header({onBuscar}) {
+    const [MenuAberto, setMenuAberto] = useState(false);
+    const [filtraPorNome, setFiltraPorNome] = useState(''); 
 
-    const handleSearch = () => {
-        // Exibe a mensagem de busca
-        setSearchResult(searchQuery);
-    };
+    function buscarProdutoNome(nome) {
+        onBuscar(nome); 
+    }
+
+    function Abrir(){
+        setMenuAberto(!MenuAberto);
+    }
+
 
     return (
         <header className="bg-light py-0 d-flex flex-column gap-3" style={{ position: "sticky", top: 0, zIndex: 1000 }}>
@@ -37,25 +37,21 @@ export default function Header() {
                 <div className="container d-flex flex-column flex-md-row justify-content-evenly align-items-center gap-3">
                     <div className="d-flex flex-column flex-md-row align-items-center gap-2 gap-md-4 w-100">
                         <Image src="/logo.png" alt="Logo" width={100} height={50} />
-                        <div className="input-group w-100" style={{ maxWidth: 600 }}>
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Digite o que você procura aqui..."
-                                aria-label="Search"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)} // Atualiza o estado com o texto digitado
-                            />
-                            <button className="btn btn-outline-secondary" type="button" onClick={handleSearch}>
-                                <FaSearch size={20} />
-                            </button>
-                        </div>
-                        {/* Exibindo o resultado da busca */}
-                        {searchResult && (
-                            <div className="mt-2 text-center text-dark">
-                                Você buscou por: <strong>{searchResult}</strong>
-                            </div>
-                        )}
+                        <div className="container d-flex align-items-center">
+                <form onSubmit={(e) => {e.preventDefault();buscarProdutoNome(filtraPorNome);}} className="d-flex align-items-center gap-2" style={{ width: "100%" }}>
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Buscar por nome..."
+                        value={filtraPorNome}
+                        onChange={(e) => setFiltraPorNome(e.target.value)}
+                    />
+                    <button className="btn btn-primary ms-2" onClick={() => buscarProdutoNome(filtraPorNome)}>
+                        <FaSearch />
+                    </button>
+                </form>
+            </div>
+                        
                     </div>
                     <div className="d-flex align-items-center gap-2 gap-md-3 mt-3 mt-md-0">
                         <button className="btn border-0 bg-transparent d-flex align-items-center gap-2 fs-5">
@@ -74,8 +70,8 @@ export default function Header() {
             <nav>
                 <ul className="nav flex-row justify-content-center gap-1" style={{ gap: "3px" }}>
                     <li>
-                        <button className="btn border-0 bg-transparent" onClick={toggleMenu}>
-                            {isMenuOpen ? <BiX /> : <IoIosMenu />} <span>
+                        <button className="btn border-0 bg-transparent" onClick={Abrir}>
+                            {MenuAberto ? <BiX /> : <IoIosMenu />} <span>
                                 Todas as categorias
                             </span>
                         </button>

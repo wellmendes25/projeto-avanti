@@ -5,7 +5,7 @@ export default function SuperSale() {
         <div
             className="container-fluid d-flex align-items-center justify-content-center py-5"
             style={{
-                backgroundColor: "#FFC8CB",
+                backgroundColor: "#E5EDF1",
                 width: "100%",
                 margin: 0,
             }}
