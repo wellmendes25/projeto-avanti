@@ -50,6 +50,7 @@ export default function Home() {
 
       <Contatos />
       <Newsletter />
+      <Footer />
       
     </main>
   );
