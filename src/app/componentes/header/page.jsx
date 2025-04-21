@@ -25,7 +25,7 @@ export default function Header({onBuscar}) {
 
 
     return (
-        <header className="bg-light py-0 d-flex flex-column gap-3" style={{ position: "sticky", top: 0, zIndex: 1 }}>
+        <header className="bg-light py-0 d-flex flex-column gap-3" style={{ position: "sticky", top: 0, zIndex: 10000 }}>
 
                 <div
                     className="w-100 text-center bg-primary align-items-start justify-content-center "
