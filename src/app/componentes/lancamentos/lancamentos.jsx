@@ -22,6 +22,7 @@ export default function Lancamentos({produtos}) {
                     750: { slidesPerView: 2 },
                     1550: { slidesPerView: 3 },
                     2000: { slidesPerView: 4 },
+                 
                 }}
                 navigation
                 modules={[Navigation]}

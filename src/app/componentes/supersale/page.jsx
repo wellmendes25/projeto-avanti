@@ -23,8 +23,8 @@ export default function SuperSale() {
                     />
                 </div>
                 <div className="d-flex flex-column align-items-center align-items-md-start justify-content-between  w-100  ">
-                    <div style={{ maxWidth: 520, minWidth: 260, width: "100%" }}>
-                        <h1 className="text-center text-md-start" style={{ fontSize: "clamp(4.5rem, 8vw, 100px)" }}>
+                    <div style={{ maxWidth: 520, minWidth: 210, width: "100%" }}>
+                        <h1 className="text-center text-md-start" style={{ fontSize: "clamp(3.5rem, 8vw, 100px)" }}>
                             <span className="fw-bold">Super</span>
                             <span style={{ fontWeight: 300 }}>Sale</span>
                         </h1>
